@@ -88,6 +88,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     try:
         clientSocket.send(endmsg.encode())
     # Fill in end
+        recv1 = clientSocket.recv(1024).decode()
     except Exception as e:
         clientSocket.close()
         return
